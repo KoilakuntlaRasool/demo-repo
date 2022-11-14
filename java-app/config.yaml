@@ -1,0 +1,23 @@
+---
+apiversion: apps/v1
+kind: deployment
+metadat:
+  name: nginx
+spec:
+  selector:
+    matchLabels:
+        app: nginx
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          app: nglix
+       spec:
+         containers:
+           - name: nginx
+             image: nginx
+             ports:
+               - containerport: 8050   
+
+
+
